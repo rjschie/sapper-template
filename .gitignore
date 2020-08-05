@@ -1,6 +1,11 @@
-.DS_Store
-/node_modules/
-/src/node_modules/@sapper/
-yarn-error.log
-/cypress/screenshots/
+# Build files
 /__sapper__/
+/static/index.css
+
+# Included files
+/src/node_modules/@sapper/
+/cypress/screenshots/
+
+# Other files
+/node_modules/
+yarn-error.log

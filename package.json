@@ -3,10 +3,13 @@
   "description": "My perosonal Svelte-Sapper template",
   "version": "0.1.0",
   "scripts": {
-    "dev": "sapper dev",
-    "build": "sapper build --legacy",
-    "export": "sapper export --legacy",
+    "dev": "run-p start:dev watch:tailwind",
+    "build": "yarn build:tailwind && sapper build --legacy",
+    "watch:tailwind": "postcss src/styles/tailwind.css -o static/index.css -w",
+    "build:tailwind": "NODE_ENV=production postcss src/styles/tailwind.css -o static/index.css",
+    "start:dev": "sapper dev",
     "start": "node __sapper__/build",
+    "export": "yarn build:tailwind && sapper export --legacy",
     "pretty": "prettier --write .",
     "cy:run": "cypress run",
     "cy:open": "cypress open",
@@ -39,12 +42,14 @@
     "prettier": "^2.0.5",
     "prettier-plugin-svelte": "^1.1.0",
     "pretty-quick": "^2.0.1",
+    "postcss-cli": "^7.1.1",
     "rollup": "^2.3.4",
     "rollup-plugin-svelte": "^5.0.1",
     "rollup-plugin-terser": "^5.3.0",
     "sapper": "^0.27.0",
     "sass": "^1.26.10",
     "svelte": "^3.0.0",
-    "svelte-preprocess": "^4.0.10"
+    "svelte-preprocess": "^4.0.10",
+    "tailwindcss": "^1.6.2"
   }
 }
