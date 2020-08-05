@@ -16,6 +16,7 @@ module.exports = {
   overrides: [
     {
       files: ['**/*.svelte'],
+      settings: { 'svelte3/ignore-styles': (attrs) => 'lang' in attrs },
       processor: 'svelte3/svelte3',
       env: {
         browser: true,
