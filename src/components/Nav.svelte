@@ -13,7 +13,6 @@
       <a aria-current={segment === 'about' ? 'page' : undefined} href="about">
         about
       </a>
-      <input type="text" />
     </li>
 
     <!-- for the blog link, we're using rel=prefetch so that Sapper prefetches
